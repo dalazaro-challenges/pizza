@@ -3,9 +3,9 @@ class CreateOrders < ActiveRecord::Migration[5.1]
     create_table :orders do |t|
       t.string :name
       t.string :phone
-      t.datetime :pickup
+      t.string :pickup
       t.string :size
-      t.string :type
+      t.string :toppings
       t.boolean :ready
 
       t.timestamps
