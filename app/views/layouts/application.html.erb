@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pizza</title>
+    <title>ACME Pizza</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render partial: 'header' %>
+
+    <div>
+      <% flash.each do |key, value| %>
+        <div class="center">
+          <%= value %>
+        </div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= yield %>
+    </div>
   </body>
+  
 </html>
