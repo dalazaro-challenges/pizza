@@ -1,0 +1,28 @@
+<h2>Baker</h2>
+<h3>Orders Index</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pickup</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Size</th>
+      <th>Toppings</th>
+      <th>Ready for Pickup?</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.pickup %></td>
+        <td><%= order.name %></td>
+        <td><%= order.phone %></td>
+        <td><%= order.size %></td>
+        <td><%= order.toppings %></td>
+        <td><%= order.ready %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

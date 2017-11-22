@@ -1,0 +1,23 @@
+<h2>Cashier</h2>
+<h3>New Order</h3>
+
+<div>
+  <%= form_for :order, url: "/orders", method: "post" do |f| %>
+    <div>
+      Name: <%= f.text_field :name %>
+    </div>
+    <div>
+      Phone: <%= f.text_field :phone %>
+    </div>
+    <div>
+      Pickup: <%= f.text_field :pickup %>
+    </div>
+    <div>
+      Size: <%= f.text_field :size %>
+    </div>
+    <div>
+      Toppings: <%= f.text_field :toppings %>
+    </div>
+    <%= f.submit "Save Order" %>
+  <% end %>
+</div>
