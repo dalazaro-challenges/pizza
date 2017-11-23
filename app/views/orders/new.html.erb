@@ -1,23 +1,30 @@
 <h2>Cashier</h2>
-<h3>New Order</h3>
+<h3>Place a New Order</h3>
 
 <div>
   <%= form_for :order, url: "/orders", method: "post" do |f| %>
-    <div>
-      Name: <%= f.text_field :name %>
+    <div class="form-input">
+      <%= f.label "Name:" %>
+      <%= f.text_field :name, required: "true", minlength: 1 %>
     </div>
-    <div>
-      Phone: <%= f.text_field :phone %>
+    <div class="form-input">
+      <%= f.label "Phone:" %>
+      <%= f.text_field :phone, required: "true", minlength: 10 %>
     </div>
-    <div>
-      Pickup: <%= f.text_field :pickup %>
+    <div class="form-input">
+      <%= f.label "Pickup Time (Military):" %>
+      <%= f.text_field :time, required: "true" %>
     </div>
-    <div>
-      Size: <%= f.text_field :size %>
+    <div class="form-input">
+      <%= f.label "Size:" %>
+      <%= f.select :size, ['Small', 'Medium', 'Large']%>
     </div>
-    <div>
-      Toppings: <%= f.text_field :toppings %>
+    <div class="form-input">
+      <%= f.label "Toppings:" %>
+      <%= f.select :toppings, ['Cheese', 'Pepperoni', 'Hawaiian', 'Veggie']%>
     </div>
-    <%= f.submit "Save Order" %>
+    <div class="form-input">
+      <%= f.submit "Save Order" %>
+    </div>
   <% end %>
 </div>

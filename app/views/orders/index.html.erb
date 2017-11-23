@@ -1,5 +1,5 @@
 <h2>Baker</h2>
-<h3>Orders Index</h3>
+<h3>View & Update Order Status</h3>
 
 <table>
   <thead>
@@ -10,18 +10,25 @@
       <th>Size</th>
       <th>Toppings</th>
       <th>Ready for Pickup?</th>
+      <th>Mark Completed</th>
     </tr>
   </thead>
 
   <tbody>
     <% @orders.each do |order| %>
+      <% if order.ready === true %>
+        <% is_ready = "Yes" %>
+        <% elsif order.ready === false %>
+        <% is_ready = "No" %>
+      <% end %>
       <tr>
-        <td><%= order.pickup %></td>
+        <td><%= order.pickup[11..15] %></td>
         <td><%= order.name %></td>
-        <td><%= order.phone %></td>
+        <td><%= order.phone.insert(0, '(').insert(4, ') ').insert(9, ' ') %></td>
         <td><%= order.size %></td>
         <td><%= order.toppings %></td>
-        <td><%= order.ready %></td>
+        <td><%= is_ready %></td>
+        <td><%= link_to "Edit Order", edit_order_path(order.id) %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,0 +1,28 @@
+<div>
+  <%= form_for @order do |f| %>
+    <% time = @order.pickup[11..15] %>
+    <div class="form-input">
+      <%= f.label "Name:" %>
+      <%= f.text_field :name, required: "true", minlength: 1 %>
+    </div>
+    <div class="form-input">
+      <%= f.label "Phone:" %>
+      <%= f.text_field :phone, required: "true", minlength: 10 %>
+    </div>
+    <div class="form-input">
+      <%= f.label "Pickup Time (Military):" %>
+      <%= f.text_field :time, value: time, required: "true" %>
+    </div>
+    <div class="form-input">
+      <%= f.label "Size:" %>
+      <%= f.select :size, ['Small', 'Medium', 'Large']%>
+    </div>
+    <div class="form-input">
+      <%= f.label "Toppings:" %>
+      <%= f.select :toppings, ['Cheese', 'Pepperoni', 'Hawaiian', 'Veggie']%>
+    </div>
+    <div class="form-input">
+      <%= f.submit "Save Order" %>
+    </div>
+  <% end %>
+</div>
