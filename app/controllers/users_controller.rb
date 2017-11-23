@@ -4,4 +4,8 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def manager
+    @orders = Order.all.order('created_at ASC')
+  end
+
 end

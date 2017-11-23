@@ -10,15 +10,20 @@ class OrdersController < ApplicationController
 
   def create
     order = Order.new(order_params)
+    order.pickup = Time.parse "#{order_params[:time]}"
     order.ready = false
 
     if order.save
       flash[:notice] = 'Order saved.'
-      redirect_to new_order_path
     else
       flash[:error] = 'There was an error in saving the order. Please try again.'
-      redirect_to new_order_path
     end
+
+    redirect_to new_order_path
+  end
+
+  def show
+    @order = Order.find_by_id(params[:id])
   end
 
   def edit
@@ -40,6 +45,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:name, :phone, :pickup, :size, :toppings, :ready)
+    params.require(:order).permit(:name, :phone, :time, :size, :toppings, :ready)
   end
 end
