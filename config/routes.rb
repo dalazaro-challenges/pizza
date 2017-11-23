@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   # Baker: orders#edit
   get '/Baker', to: 'orders#index', as: 'orders'
-  get '/order/:id/edit', to: 'order#edit', as: 'edit_order'
+  get 'orders/:id', to: 'orders#show', as: 'order'
+  get '/orders/:id/edit', to: 'orders#edit', as: 'edit_order'
   patch '/orders/:id', to: 'orders#update'
 
   # Cashier: orders#new
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
   post '/orders', to: 'orders#create'
 
   # Manager: orders#index
-  get '/Manager', to: 'application#manager', as: 'manager'
+  get '/Manager', to: 'users#manager', as: 'manager'
 
   delete '/orders/:id', to: 'orders#destroy'
 
