@@ -1,0 +1,20 @@
+body {
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+}
+
+th, td {
+  padding: 8px;
+  border-bottom: 1px dashed grey;
+}
+
+div.form-input {
+  padding: 5px;
+}
+
+.app-user {
+  margin: 5px;
+}
