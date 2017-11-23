@@ -10,7 +10,7 @@
       <th>Size</th>
       <th>Toppings</th>
       <th>Ready for Pickup?</th>
-      <th>Mark Completed</th>
+      <th>Edit Order</th>
     </tr>
   </thead>
 
@@ -28,7 +28,7 @@
         <td><%= order.size %></td>
         <td><%= order.toppings %></td>
         <td><%= is_ready %></td>
-        <td><%= link_to "Edit Order", edit_order_path(order.id) %></td>
+        <td><%= link_to "Edit", edit_order_path(order.id) %></td>
       </tr>
     <% end %>
   </tbody>
