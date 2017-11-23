@@ -1,5 +1,5 @@
 <h2>Manager</h2>
-<h3>All Orders</h3>
+<h3>View Order History</h3>
 
 <table>
   <thead>
@@ -16,14 +16,19 @@
 
   <tbody>
     <% @orders.each do |order| %>
+      <% if order.ready === true %>
+        <% is_ready = "Yes" %>
+        <% elsif order.ready === false %>
+        <% is_ready = "No" %>
+      <% end %>
       <tr>
-        <td><%= order.created_at %></td>
-        <td><%= order.pickup %></td>
+        <td><%= order.created_at.getlocal.strftime("%m/%d/%Y - %H:%M") %></td>
+        <td><%= order.pickup[11..15] %></td>
         <td><%= order.name %></td>
-        <td><%= order.phone %></td>
+        <td><%= order.phone.insert(0, '(').insert(4, ') ').insert(9, ' ') %></td>
         <td><%= order.size %></td>
         <td><%= order.toppings %></td>
-        <td><%= order.ready %></td>
+        <td><%= is_ready %></td>
       </tr>
     <% end %>
   </tbody>
