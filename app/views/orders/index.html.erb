@@ -4,7 +4,8 @@
 <table>
   <thead>
     <tr>
-      <th>Pickup</th>
+      <th>Date</th>
+      <th>Pickup Time</th>
       <th>Name</th>
       <th>Phone</th>
       <th>Size</th>
@@ -22,6 +23,7 @@
         <% is_ready = "No" %>
       <% end %>
       <tr>
+        <td><%= order.pickup[5..9] %></td>
         <td><%= order.pickup[11..15] %></td>
         <td><%= order.name %></td>
         <td><%= order.phone.insert(0, '(').insert(4, ') ').insert(9, ' ') %></td>

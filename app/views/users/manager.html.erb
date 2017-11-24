@@ -4,8 +4,9 @@
 <table>
   <thead>
     <tr>
-      <th>Order Created at</th>
-      <th>Pickup</th>
+      <th>Date Created</th>
+      <th>Time Created</th>
+      <th>Pickup Time</th>
       <th>Name</th>
       <th>Phone</th>
       <th>Size</th>
@@ -22,7 +23,8 @@
         <% is_ready = "No" %>
       <% end %>
       <tr>
-        <td><%= order.created_at.getlocal.strftime("%m/%d/%Y - %H:%M") %></td>
+        <td><%= order.created_at.getlocal.strftime("%m-%d") %></td>
+        <td><%= order.created_at.getlocal.strftime("%H:%M") %></td>
         <td><%= order.pickup[11..15] %></td>
         <td><%= order.name %></td>
         <td><%= order.phone.insert(0, '(').insert(4, ') ').insert(9, ' ') %></td>
