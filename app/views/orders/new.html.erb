@@ -2,7 +2,7 @@
 <h3>Place a New Order</h3>
 
 <div>
-  <%= form_for :order, url: "/orders", method: "post" do |f| %>
+  <%= form_for @order, url: "/orders", method: "post" do |f| %>
     <div class="form-input">
       <%= f.label "Name:" %>
       <%= f.text_field :name, required: "true", minlength: 1 %>
@@ -12,7 +12,7 @@
       <%= f.text_field :phone, required: "true", minlength: 10 %>
     </div>
     <div class="form-input">
-      <%= f.label "Pickup Time (Military):" %>
+      <%= f.label "Pickup Time (23:59):" %>
       <%= f.text_field :time, required: "true" %>
     </div>
     <div class="form-input">
