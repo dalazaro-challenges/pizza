@@ -31,8 +31,9 @@ class OrdersController < ApplicationController
   end
 
   def update
-    order = Order.find_by_id(params[:id])      
+    order = Order.find_by_id(params[:id])
     order.update_attributes(order_params)
+    flash[:notice] = 'Order updated.'
     redirect_to orders_path(order)
   end
 
