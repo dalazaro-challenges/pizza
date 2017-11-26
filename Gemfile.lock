@@ -149,7 +149,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actioncable (~> 0.0.0)
+  actioncable
   byebug
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
