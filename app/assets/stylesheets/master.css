@@ -2,19 +2,30 @@ body {
   text-align: center;
 }
 
-table {
-  margin: 0 auto;
+.header {
+  margin: 20px auto;
 }
 
-th, td {
-  padding: 8px;
-  border-bottom: 1px dashed grey;
+.flash-msg {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-div.form-input {
-  padding: 5px;
+.order-form {
+  width: 300px;
+  margin: 10px auto 20px auto;
 }
 
 .app-user {
   margin: 5px;
+  width: 200px;
+  padding: 20px;
+  font-size: 1.75em;
+  border: 1px solid grey;
+}
+
+.form-btn {
+  margin: 15px auto;
 }
