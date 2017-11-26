@@ -1,5 +1,5 @@
 <h2>I am a:</h2>
 
 <% @users.each do |user| %>
-  <%= button_to "#{user.name}", "/#{user.name}", method: :get, class: "app-user" %>
+  <%= button_to "#{user.name}", "/#{user.name}", method: :get, class: "btn btn-light app-user" %>
 <% end %>

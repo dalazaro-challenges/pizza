@@ -1,30 +1,30 @@
 <h2>Cashier</h2>
 <h3>Place a New Order</h3>
 
-<div>
+<div class="order-form">
   <%= form_for @order, url: "/orders", method: "post" do |f| %>
-    <div class="form-input">
-      <%= f.label "Name:" %>
-      <%= f.text_field :name, required: "true", minlength: 1 %>
+    <div>
+      <%= f.label "Name:", class: "col-form-label" %>
+      <%= f.text_field :name, class: "form-control", required: "true", minlength: 1 %>
     </div>
-    <div class="form-input">
-      <%= f.label "Phone:" %>
-      <%= f.text_field :phone, required: "true", minlength: 10 %>
+    <div>
+      <%= f.label "Phone:", class: "col-form-label" %>
+      <%= f.telephone_field :phone, placeholder: "5105554321", class: "form-control", required: "true", minlength: 10 %>
     </div>
-    <div class="form-input">
-      <%= f.label "Pickup Time (23:59):" %>
-      <%= f.text_field :time, required: "true" %>
+    <div>
+      <%= f.label "Pickup Time:", class: "col-form-label" %>
+      <%= f.time_field :time, class: "form-control", required: "true" %>
     </div>
-    <div class="form-input">
-      <%= f.label "Size:" %>
-      <%= f.select :size, ['Small', 'Medium', 'Large']%>
+    <div>
+      <%= f.label "Size:", class: "col-form-label" %>
+      <%= f.select :size, ['Small', 'Medium', 'Large'], class: "form-control" %>
     </div>
-    <div class="form-input">
-      <%= f.label "Toppings:" %>
-      <%= f.select :toppings, ['Cheese', 'Pepperoni', 'Hawaiian', 'Veggie']%>
+    <div>
+      <%= f.label "Toppings:", class: "col-form-label" %>
+      <%= f.select :toppings, ['Cheese', 'Pepperoni', 'Hawaiian', 'Veggie'], class: "form-control" %>
     </div>
-    <div class="form-input">
-      <%= f.submit "Save Order" %>
+    <div class="form-btn">
+      <%= f.submit "Save Order", class: "btn btn-success" %>
     </div>
   <% end %>
 </div>
